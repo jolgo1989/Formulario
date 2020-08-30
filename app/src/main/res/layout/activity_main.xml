@@ -134,7 +134,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/buttonFechanacimiento"
+                android:id="@+id/buttonDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/fechaNacimiento" />
@@ -184,6 +184,13 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/textview4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/textview5" />
 
 
 </LinearLayout>

@@ -1,19 +1,27 @@
 package com.example.myapplicationformulario2
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.DatePickerDialog
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.DatePicker
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() ,  DatePickerDialog.OnDateSetListener   {
+
+    lateinit var dateText:TextView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val lista = arrayOf("Santa Marta", "Barranquilla" , "Bogota", "Medellin", "Cartagena")
-        val adaptador1 = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,lista)
+        val lista = arrayOf("Santa Marta", "Barranquilla", "Bogota", "Medellin", "Cartagena")
+        val adaptador1 = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
         spinner.adapter = adaptador1
 
         buttonGuardar.setOnClickListener {
@@ -61,10 +69,17 @@ class MainActivity : AppCompatActivity() {
                             textView4.text = (" \n$email \n$phone ")
                         }
 
+
             radioGroup()
             checkBox()
 
         }
+
+        buttonDate.setOnClickListener {
+            showDatePickerDialog()
+        }
+
+
 
     }
 
@@ -89,7 +104,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //Metodo para el calendario
 
+    fun showDatePickerDialog() {
+        val datePickerDialog = DatePickerDialog(
+            this,
+            this,
+            Calendar.getInstance().get(Calendar.YEAR),
+            Calendar.getInstance().get(Calendar.MONTH),
+            Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+        )
+        datePickerDialog.show()
+    }
+
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        val date = "month/day/year: $month/$dayOfMonth/$year"
+        textView5.text = date
+
+       // dateText.text = date
+    }
 
 
 }
