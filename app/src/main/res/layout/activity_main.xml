@@ -9,8 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
-
+    tools:context=".MainActivity">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -18,8 +17,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/usuario"
         android:paddingLeft="20dp"
-        app:errorEnabled="true"
-        android:paddingRight="20dp">
+        android:paddingRight="20dp"
+        app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -83,22 +82,48 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <RadioGroup
-        android:layout_width="130dp"
-        android:layout_height="78dp">
+    <LinearLayout
+        android:layout_width="328dp"
+        android:layout_height="83dp"
+        android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+        <RadioGroup
+            android:id="@+id/RadioGroup"
+            android:layout_width="125dp"
+            android:layout_height="77dp">
 
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/masculino" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFamale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/femenino" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="122dp"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/checkBoxFutbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/futbol" />
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/baloncesto" />
+        </RadioGroup>
+
+    </LinearLayout>
 
 
 </LinearLayout>
