@@ -83,8 +83,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
-        android:layout_width="328dp"
-        android:layout_height="83dp"
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
         android:orientation="horizontal">
 
         <RadioGroup
@@ -107,8 +107,8 @@
         </RadioGroup>
 
         <RadioGroup
-            android:layout_width="122dp"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <CheckBox
                 android:id="@+id/checkBoxFutbol"
@@ -121,6 +121,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/baloncesto" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fechaNacimiento" />
+
         </RadioGroup>
 
     </LinearLayout>
