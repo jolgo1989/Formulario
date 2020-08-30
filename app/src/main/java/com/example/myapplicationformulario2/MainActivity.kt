@@ -2,10 +2,7 @@ package com.example.myapplicationformulario2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
-import androidx.core.view.isEmpty
-import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -38,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                         textInputPassword2.error = "Clave no coincide"
                     } else
                         if (user.isNotEmpty() || email.isNotEmpty() || phone.isNotEmpty() || passWord1.isNotEmpty() || passWord2.isNotEmpty()) {
-                           
+
                             //Metodo para quitar el error una vez se llenen los campo
                             textInputUsuario.error = null
                             textInputEmail.error = null
@@ -46,35 +43,36 @@ class MainActivity : AppCompatActivity() {
                             textInputPassword1.error = null
                             textInputPassword2.error = null
 
-                            textView2.text = ("\n $user \n $email \n $phone ")
+                            textView.text = ("\n $user  \n $email \n $phone ")
                         }
 
 
 
-            //radioGroup()
-           // checkBox()
+            radioGroup()
+            checkBox()
 
         }
 
     }
 
     fun radioGroup() {
-        val respueta101 = "\n Es Mujer"
-        val respueta102 = "\n Es hombre"
+
         if (radioButtonFamale.isChecked ) {
-            textView2.text = respueta101
+            textView2.text = ("Es Mujer")
         } else {
-            textView2.text = respueta102
+            textView2.text = ("Es Hombre")
         }
     }
 
     fun checkBox(){
-        val respuesta201 = "\n Le gusta el Futbol"
-        val respuesta202 = "\n Le gusta el baloncesto"
-        if (checkBoxFutbol.isChecked){
-            textView2.text = respuesta201
+
+        if (checkBoxFutbol.isChecked && checkBoxBaloncesto.isChecked){
+            textView3.text = ("Le gusta el Futbol y el Baloncesto")
+        } else
+        if(checkBoxFutbol.isChecked){
+            textView3.text = ("Le gusta el fulbol")
         } else {
-            textView2.text = respuesta202
+            textView3.text = ("Le gusta el Baloncesto")
         }
     }
 
