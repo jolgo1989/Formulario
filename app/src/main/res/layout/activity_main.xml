@@ -110,9 +110,10 @@
 
         </RadioGroup>
 
-        <RadioGroup
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <CheckBox
                 android:id="@+id/checkBoxFutbol"
@@ -121,12 +122,11 @@
                 android:text="@string/futbol" />
 
             <CheckBox
-                android:id="@+id/checkBox6"
+                android:id="@+id/checkBoxBaloncesto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/baloncesto" />
-
-        </RadioGroup>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -157,7 +157,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:lineSpacingExtra="10dp"
         android:text="@string/textview" />
 

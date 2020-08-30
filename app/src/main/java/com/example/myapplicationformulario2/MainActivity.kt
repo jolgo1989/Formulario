@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.core.view.isEmpty
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main2.*
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,27 +38,43 @@ class MainActivity : AppCompatActivity() {
                         textInputPassword2.error = "Clave no coincide"
                     } else
                         if (user.isNotEmpty() || email.isNotEmpty() || phone.isNotEmpty() || passWord1.isNotEmpty() || passWord2.isNotEmpty()) {
-                            Toast.makeText(this, "Llene todos los campos", Toast.LENGTH_SHORT)
-                                .show()
+                           
                             //Metodo para quitar el error una vez se llenen los campo
                             textInputUsuario.error = null
                             textInputEmail.error = null
                             textInputPhone.error = null
                             textInputPassword1.error = null
                             textInputPassword2.error = null
+
+                            textView2.text = ("\n $user \n $email \n $phone ")
                         }
-            radioGroup()
-            //checkBox()
+
+
+
+            //radioGroup()
+           // checkBox()
 
         }
 
     }
 
     fun radioGroup() {
+        val respueta101 = "\n Es Mujer"
+        val respueta102 = "\n Es hombre"
         if (radioButtonFamale.isChecked ) {
-            textView2.text = ("\n Mujer")
+            textView2.text = respueta101
         } else {
-            textView2.text = ("\n Es hombre")
+            textView2.text = respueta102
+        }
+    }
+
+    fun checkBox(){
+        val respuesta201 = "\n Le gusta el Futbol"
+        val respuesta202 = "\n Le gusta el baloncesto"
+        if (checkBoxFutbol.isChecked){
+            textView2.text = respuesta201
+        } else {
+            textView2.text = respuesta202
         }
     }
 
