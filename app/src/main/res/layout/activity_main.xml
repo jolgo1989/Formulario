@@ -13,11 +13,14 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/usuario"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="15"
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -84,7 +87,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="126dp"
+        android:layout_height="106dp"
         android:orientation="horizontal">
 
         <RadioGroup
@@ -107,7 +110,7 @@
         </RadioGroup>
 
         <RadioGroup
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <CheckBox
@@ -122,15 +125,39 @@
                 android:layout_height="wrap_content"
                 android:text="@string/baloncesto" />
 
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonFechanacimiento"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/fechaNacimiento" />
 
-        </RadioGroup>
+            <Spinner
+                android:id="@+id/spinnerLugarNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/guardar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
 
 </LinearLayout>
