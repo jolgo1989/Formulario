@@ -88,7 +88,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="106dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioGroup
@@ -130,7 +130,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <Button
@@ -140,7 +140,7 @@
                 android:text="@string/fechaNacimiento" />
 
             <Spinner
-                android:id="@+id/spinnerLugarNacimiento"
+                android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -177,6 +177,13 @@
         android:gravity="center"
         android:lineSpacingExtra="10dp"
         android:text="@string/textview" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/textview4" />
 
 
 </LinearLayout>

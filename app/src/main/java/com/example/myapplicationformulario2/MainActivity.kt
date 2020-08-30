@@ -2,6 +2,7 @@ package com.example.myapplicationformulario2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -11,12 +12,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val lista = arrayOf("Santa Marta", "Barranquilla" , "Bogota", "Medellin", "Cartagena")
+        val adaptador1 = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,lista)
+        spinner.adapter = adaptador1
+
         buttonGuardar.setOnClickListener {
             val user = textInputUsuario.editText?.text.toString()
             val email = textInputEmail.editText?.text.toString()
             val phone = textInputPhone.editText?.text.toString()
             val passWord1 = textInputPassword1.editText?.text.toString()
             val passWord2 = textInputPassword2.editText?.text.toString()
+
+            when (spinner.selectedItem.toString()){
+                "Santa Marta" -> textView.text = ("\n $user es de Santa Marta")
+                "Barranquilla" -> textView.text = ("\n $user es de Barranquilla")
+                "Bogota" -> textView.text = ("\n $user es de Bogota")
+                "Medellin" -> textView.text = ("\n $user es de Medellin")
+                "Cartagena" -> textView.text = ("\n $user es de Cartagena")
+
+            }
+
 
             if (user.isEmpty() || email.isEmpty() || phone.isEmpty() || passWord1.isEmpty() || passWord2.isEmpty()) {
                 Toast.makeText(this, "Llene todos los campos", Toast.LENGTH_SHORT).show()
@@ -43,10 +58,8 @@ class MainActivity : AppCompatActivity() {
                             textInputPassword1.error = null
                             textInputPassword2.error = null
 
-                            textView.text = ("\n $user  \n $email \n $phone ")
+                            textView4.text = (" \n$email \n$phone ")
                         }
-
-
 
             radioGroup()
             checkBox()
