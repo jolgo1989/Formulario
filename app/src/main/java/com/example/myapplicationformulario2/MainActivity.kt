@@ -11,14 +11,19 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() ,  DatePickerDialog.OnDateSetListener   {
+class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
-    lateinit var dateText:TextView
+    lateinit var dateText: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Metodo para colocar icono en el actionbar
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setIcon(R.mipmap.ic_launcher)
+
 
         val lista = arrayOf("Santa Marta", "Barranquilla", "Bogota", "Medellin", "Cartagena")
         val adaptador1 = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
@@ -31,7 +36,7 @@ class MainActivity : AppCompatActivity() ,  DatePickerDialog.OnDateSetListener  
             val passWord1 = textInputPassword1.editText?.text.toString()
             val passWord2 = textInputPassword2.editText?.text.toString()
 
-            when (spinner.selectedItem.toString()){
+            when (spinner.selectedItem.toString()) {
                 "Santa Marta" -> textView.text = ("\n $user es de Santa Marta")
                 "Barranquilla" -> textView.text = ("\n $user es de Barranquilla")
                 "Bogota" -> textView.text = ("\n $user es de Bogota")
@@ -80,28 +85,27 @@ class MainActivity : AppCompatActivity() ,  DatePickerDialog.OnDateSetListener  
         }
 
 
-
     }
 
     fun radioGroup() {
 
-        if (radioButtonFamale.isChecked ) {
+        if (radioButtonFamale.isChecked) {
             textView2.text = ("Es Mujer")
         } else {
             textView2.text = ("Es Hombre")
         }
     }
 
-    fun checkBox(){
+    fun checkBox() {
 
-        if (checkBoxFutbol.isChecked && checkBoxBaloncesto.isChecked){
+        if (checkBoxFutbol.isChecked && checkBoxBaloncesto.isChecked) {
             textView3.text = ("Le gusta el Futbol y el Baloncesto")
         } else
-        if(checkBoxFutbol.isChecked){
-            textView3.text = ("Le gusta el fulbol")
-        } else {
-            textView3.text = ("Le gusta el Baloncesto")
-        }
+            if (checkBoxFutbol.isChecked) {
+                textView3.text = ("Le gusta el fulbol")
+            } else {
+                textView3.text = ("Le gusta el Baloncesto")
+            }
     }
 
     //Metodo para el calendario
@@ -121,7 +125,7 @@ class MainActivity : AppCompatActivity() ,  DatePickerDialog.OnDateSetListener  
         val date = "month/day/year: $month/$dayOfMonth/$year"
         textView5.text = date
 
-       // dateText.text = date
+        // dateText.text = date
     }
 
 
