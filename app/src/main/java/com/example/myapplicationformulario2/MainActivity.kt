@@ -13,14 +13,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonGuardar.setOnClickListener {
-            val usuario = textInputUsuario.editText?.text.toString()
-            
+            val user = textInputUsuario.editText?.text.toString()
+            val email = textInputEmail.editText?.text.toString()
+            val phone = textInputPhone.editText?.text.toString()
+            val clave1 = textInputPassword1.editText?.text.toString()
+            val clave2 = textInputPassword2.editText?.text.toString()
 
-            if (usuario.isEmpty()){
-
-                Toast.makeText(this, "El campo no puede estar vacio", Toast.LENGTH_SHORT).show()
-
-            }
+            if (user.isEmpty()||email.isEmpty()||phone.isEmpty()||clave1.isEmpty()||clave2.isEmpty()){
+                Toast.makeText(this, "Llene todos los campos", Toast.LENGTH_SHORT).show()
+                textInputUsuario.error="Ingrese Usuario"
+                textInputEmail.error="Ingrese Email"
+                textInputPhone.error="Ingrese Telefono"
+                textInputPassword1.error="Ingrese Clave"
+                textInputPassword2.error="Ingrese segunda Clave"
+            } else
+                if (user.length > 3 ){
+                    textInputEmail.error = "Nombre debe ser mayor a 3"
+                }
         }
 
     }
