@@ -3,6 +3,8 @@ package com.example.myapplicationformulario2
 import android.app.DatePickerDialog
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
 import android.widget.TextView
@@ -126,6 +128,41 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         textView5.text = date
 
         // dateText.text = date
+    }
+
+    //Metodo menu overflow
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        val inflater = menuInflater
+        inflater.inflate(R.menu.overflow, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.itemBuscar -> {
+                Toast.makeText(this, "Hola", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.ItemCompartir -> {
+                Toast.makeText(this, "Hola 2", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.item1 -> {
+                Toast.makeText(this, "Hola 3", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.item2 -> {
+                Toast.makeText(this, "Hola 4", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
+
     }
 
 

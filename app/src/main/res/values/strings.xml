@@ -18,5 +18,9 @@
     <string name="textview3">TextView</string>
     <string name="textview4">TextView</string>
     <string name="textview5">TextView</string>
+    <string name="buscar">Buscar</string>
+    <string name="compartir">Compartir</string>
+    <string name="item1">Item1</string>
+    <string name="item2">Item2</string>
 
 </resources>
