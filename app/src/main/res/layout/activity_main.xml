@@ -20,7 +20,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         app:counterEnabled="true"
-        app:counterMaxLength="3"
+        app:counterMaxLength="10"
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -34,7 +34,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/correo"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingRight="20dp"
+        app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -152,6 +153,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/guardar" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="10dp"
+        android:text="@string/textview" />
 
 
 </LinearLayout>
